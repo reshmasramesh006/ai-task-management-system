@@ -13,6 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        
         $this->app->bind(
             \App\Repositories\Contracts\TaskRepositoryInterface::class,
             \App\Repositories\Eloquent\TaskRepository::class

@@ -6,8 +6,10 @@ use App\Models\Task;
 
 class AIService
 {
+    
     public function generateSummary(Task $task): array
     {
+
         return [
             'ai_summary' =>
                 'Task involves '.$task->title.

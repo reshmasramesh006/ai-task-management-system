@@ -16,6 +16,7 @@ class TaskService
         TaskRepositoryInterface $repo,
         AIService $aiService
     ) {
+        
         $this->repo = $repo;
         $this->aiService = $aiService;
     }
@@ -29,8 +30,10 @@ class TaskService
     {
         return $this->repo->find($id);
     }
+
     public function store(array $data)
     {
+
         return DB::transaction(function () use ($data) {
 
             $task = $this->repo->create($data);
@@ -43,6 +46,7 @@ class TaskService
 
     public function update(int $id, array $data)
     {
+
         return DB::transaction(function () use ($id, $data) {
 
             $task = $this->repo->update($id, $data);

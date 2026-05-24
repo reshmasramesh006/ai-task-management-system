@@ -10,6 +10,7 @@ class PriorityEnum
 
     public static function values()
     {
+        
         return [
             self::LOW,
             self::MEDIUM,

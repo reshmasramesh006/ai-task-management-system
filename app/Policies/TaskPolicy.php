@@ -30,7 +30,8 @@ class TaskPolicy
      */
     public function view(User $user, Task $task)
     {
-         return $user->role === 'admin'
+
+        return $user->role === 'admin'
         || $task->assigned_to === $user->id;
     }
 

@@ -18,12 +18,14 @@ class TaskController extends Controller
         TaskRepositoryInterface $repo,
         TaskService $service
     ) {
+
         $this->repo = $repo;
         $this->service = $service;
     }
 
     public function index()
     {
+
         //  dd('controller reached');
         $tasks = $this->service->getAllTasks();
 
@@ -39,6 +41,7 @@ class TaskController extends Controller
 
     public function store(StoreTaskRequest $request)
     {
+
         $this->service->store($request->validated());
 
         return redirect()
@@ -48,6 +51,7 @@ class TaskController extends Controller
 
     public function show($id)
     {
+
         $task = $this->service->findTask($id);
 
         $this->authorize('view', $task);
@@ -57,6 +61,7 @@ class TaskController extends Controller
 
     public function edit($id)
     {
+
         $task = $this->service->findTask($id);
 
         $this->authorize('update', $task);
@@ -70,6 +75,7 @@ class TaskController extends Controller
         UpdateTaskRequest $request,
         $id
     ) {
+        
         $task = $this->service->findTask($id);
 
         $this->authorize('update', $task);

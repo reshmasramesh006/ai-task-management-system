@@ -9,6 +9,7 @@ class TaskRepository implements TaskRepositoryInterface
 {
     public function all(array $filters = [])
     {
+
         return Task::with('user')
             ->filter($filters)
             ->latest()
@@ -27,6 +28,7 @@ class TaskRepository implements TaskRepositoryInterface
 
     public function update(int $id, array $data)
     {
+        
         $task = Task::findOrFail($id);
 
         $task->update($data);

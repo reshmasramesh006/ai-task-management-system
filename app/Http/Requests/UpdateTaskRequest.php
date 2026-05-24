@@ -25,6 +25,7 @@ class UpdateTaskRequest extends FormRequest
      */
     public function rules()
     {
+        
        return [
             'title' => 'required|string|max:255',
 

@@ -4,6 +4,7 @@ namespace App\Repositories\Contracts;
 
 interface TaskRepositoryInterface
 {
+    
     public function all(array $filters = []);
 
     public function find(int $id);
